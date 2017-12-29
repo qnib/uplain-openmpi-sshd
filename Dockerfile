@@ -12,3 +12,5 @@ USER root
 CMD ["/usr/sbin/sshd", "-D"]
 RUN sed -i'' -s 's/#.*StrictHostKeyChecking.*/StrictHostKeyChecking no/' /etc/ssh/ssh_config
 RUN sed -i'' -s 's/#.*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/ssh_config
+COPY opt/qnib/entry/20-mkdir.sh /opt/qnib/entry/20-mkdir.sh
+ENV ENTRYPOINTS_DIR=/opt/qnib/entry/
