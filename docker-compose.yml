@@ -1,0 +1,12 @@
+version: '3'
+services:
+  instance:
+    image: qnib/uplain-openmpi-sshd:v2018-01-02
+    deploy:
+      replicas: 4
+    hostname: '{{.Service.Name}}.{{.Task.Slot}}.{{.Task.ID}}'
+    networks:
+      - ompi-net
+
+networks:
+  ompi-net:
