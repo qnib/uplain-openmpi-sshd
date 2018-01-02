@@ -1,4 +1,4 @@
-FROM qnib/uplain-openmpi:v2018-01-02
+FROM qnib/uplain-openmpi:upstream
 
 RUN apt-get update \
  && apt-get install -y openssh-server
