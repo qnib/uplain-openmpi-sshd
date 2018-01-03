@@ -15,5 +15,17 @@ COPY opt/qnib/entry/20-mkdir.sh \
      /opt/qnib/entry/
 ENV ENTRYPOINTS_DIR=/opt/qnib/entry/
 ENV SSHD_PORT=22
-RUN echo "mpirun -np 2 --host ompi_instance.1.gk9rr338khksx45ridgvw1z4t,ompi_instance.2.nktotms6rcfxi5f597xn61vkz /usr/local/bin/hello" >> ~cluser/.bash_history \
+RUN echo 'mpirun -np 2 --host $(go-fisherman -o list -t hostlist jobid${SLURM_JOBID}) /usr/local/bin/hello' >> ~cluser/.bash_history \
  && chown cluser: ~cluser/.bash_history
+
+## install docker-ce
+RUN apt-get install -y \
+      apt-transport-https \
+      ca-certificates \
+      curl \
+      software-properties-common \
+      unzip \
+ && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add - \
+ && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" \
+ && apt-get update \
+ && apt-get install -y docker-ce
