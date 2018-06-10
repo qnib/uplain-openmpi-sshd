@@ -25,5 +25,6 @@ services:
   worker:
     image: qnib/uplain-openmpi-sshd
     hostname: "worker-{{.Task.Slot}}"
+    #command: tail -f /dev/null
     deploy:
       replicas: 8
