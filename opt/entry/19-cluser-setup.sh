@@ -5,5 +5,7 @@ if [[ ! -d /chome/cluser && ! -d /chome/cluser/.ssh ]];then
   chmod 700 /chome/cluser/.ssh
   ssh-keygen -f /chome/cluser/.ssh/id_rsa -N ''
   cp /chome/cluser/.ssh/id_rsa.pub /chome/cluser/.ssh/authorized_keys
+  echo "mpirun -np 2 --host host1,host2 /usr/local/bin/hello" >> /chome/cluser/.bash_history
   chown -R cluser: /chome/cluser
+
 fi

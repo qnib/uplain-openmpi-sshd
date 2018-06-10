@@ -12,5 +12,3 @@ RUN mkdir -p /chome/cluser/.ssh \
  &&  ssh-keygen -f ~cluser/.ssh/id_rsa -N '' \
  && cp ~cluser/.ssh/id_rsa.pub ~cluser/.ssh/authorized_keys
 ENV SSHD_PORT=22
-#RUN echo "mpirun -np 2 --host host1,host2 /usr/local/bin/hello" >> /chome/cluser/.bash_history \
-# && chown cluser: /chome/cluser/.bash_history
