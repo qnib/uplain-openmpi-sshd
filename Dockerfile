@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ARG FROM_IMG_REGISTRY=docker.io
 ARG FROM_IMG_REPO=qnib
 ARG FROM_IMG_NAME="uplain-openmpi"
