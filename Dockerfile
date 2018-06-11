@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ARG FROM_IMG_REGISTRY=docker.io
 ARG FROM_IMG_REPO=qnib
 ARG FROM_IMG_NAME="uplain-openmpi"
@@ -13,3 +12,4 @@ COPY opt/entry/19-cluser-setup.sh \
  opt/entry/21-sshd.sh \
  /opt/entry/
 ENV SSHD_PORT=22
+COPY opt/qnib/bashrc /opt/qnib/bashrc
