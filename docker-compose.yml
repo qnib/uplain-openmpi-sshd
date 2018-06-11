@@ -23,8 +23,7 @@ services:
     environment:
       - SLURM_IS_CTLD=true
   worker:
-    image: qnib/uplain-openmpi-sshd
+    image: qnib/uplain-openmpi-sshd:v1
     hostname: "worker-{{.Task.Slot}}"
-    #command: tail -f /dev/null
     deploy:
-      replicas: 8
+      replicas: 4

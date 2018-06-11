@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir -p /var/run/sshd
 sed -i'' -s 's/#.*StrictHostKeyChecking.*/StrictHostKeyChecking no/' /etc/ssh/ssh_config
 sed -i'' -s 's/#.*PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/ssh_config
 sed -i'' -s "s/#.*Port.*/Port ${SSHD_PORT}/" /etc/ssh/ssh_config
